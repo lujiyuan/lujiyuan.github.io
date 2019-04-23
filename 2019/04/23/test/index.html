@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>test | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#这是我的第一篇文章 npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://yoursite.com/2019/04/23/test/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#这是我的第一篇文章 npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-23T05:27:44.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="test">
+<meta name="twitter:description" content="#这是我的第一篇文章 npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/23/test/" class="article-date">
+  <time datetime="2019-04-23T05:25:15.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      test
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#这是我的第一篇文章</p>
+<h1 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
+<p>初始化的目的就是为了生成package.json</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块</p>
+<p>在安装时使用<code>npm install 模块名 --save</code>可以将模块名保存在dependencies</p>
+<p>使用<code>npm install 模块名 --save-dev</code>可以将模块名保存在devDependencies</p>
+<p>package.json中保留的是模块清单，不管在哪个位置，只要有package.json，我们都可以直接安装所有清单上的模块</p>
+<h2 id="安装（下载模块）"><a href="#安装（下载模块）" class="headerlink" title="安装（下载模块）"></a>安装（下载模块）</h2><p>npm install -g 模块名 // 全局安装</p>
+<p>npm install 模块名 –save</p>
+<p>npm install 模块名 –save-dev</p>
+<p>npm install // 直接根据package中所需要的模块进行自动安装</p>
+<h2 id="删除模块"><a href="#删除模块" class="headerlink" title="删除模块"></a>删除模块</h2><p>npm uninstall 模块名 –save<br>npm uninstall 模块名 –g</p>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><blockquote>
+<p>facebook和一些大厂合作退出一个nodejs包管理工具，下载更快</p>
+</blockquote>
+<p>npm install -g yarn</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>yarn global add 模块名</p>
+<p>yarn add 模块名</p>
+<p>yarn add 模块名 –dev</p>
+<p>yarn</p>
+<h2 id="删除模块-1"><a href="#删除模块-1" class="headerlink" title="删除模块"></a>删除模块</h2><p>yarn remove 模块名</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/23/test/" data-id="cjutiv8270003gomdkn7aicjq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/23/新文章/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          新文章
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/23/article/">article</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/新文章/">新文章</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
