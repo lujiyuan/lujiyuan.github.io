@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>我的小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="webpack多页面配置多入口文件webpack.config.js123456789101112131415161718192021222324const path = requrie(&apos;path&apos;)const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;)module.exports = &amp;#123;  entry: &amp;#123;    名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的小站">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/web多页面/index.html">
+<meta property="og:site_name" content="我的小站">
+<meta property="og:description" content="webpack多页面配置多入口文件webpack.config.js123456789101112131415161718192021222324const path = requrie(&apos;path&apos;)const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;)module.exports = &amp;#123;  entry: &amp;#123;    名">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-25T06:26:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的小站">
+<meta name="twitter:description" content="webpack多页面配置多入口文件webpack.config.js123456789101112131415161718192021222324const path = requrie(&apos;path&apos;)const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;)module.exports = &amp;#123;  entry: &amp;#123;    名">
+  
+    <link rel="alternate" href="/atom.xml" title="我的小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="程序猿">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+        <a class="nav-item" href="/recent posts" title>最新文章</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-web多页面" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/web多页面/" class="article-date">
+  <time datetime="2019-04-25T06:26:00.000Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="webpack多页面配置"><a href="#webpack多页面配置" class="headerlink" title="webpack多页面配置"></a>webpack多页面配置</h1><h2 id="多入口文件"><a href="#多入口文件" class="headerlink" title="多入口文件"></a>多入口文件</h2><p>webpack.config.js<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = requrie(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    名字: <span class="string">'入口文件.js路径'</span>,</span><br><span class="line">    名字<span class="number">2</span>: <span class="string">'入口文件2.js路径'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    publicPath: <span class="string">''</span>, <span class="comment">// 表示html引入相关资源时的前缀</span></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'js/[name].bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 插件配置</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="comment">// HTML需要根据写好的HTML模板自动生成</span></span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      title: <span class="string">''</span>, <span class="comment">// 模板中可以通过&lt;%=htmlWebpackPlugin.options.title%&gt;获取到</span></span><br><span class="line">      template: <span class="string">'模板路径'</span>, <span class="comment">// 模板就是一个html文件</span></span><br><span class="line">      filename: <span class="string">'index.html'</span>, <span class="comment">// 根据模板生成的HTML名字</span></span><br><span class="line">      chunks: [<span class="string">'入口文件名字'</span>] <span class="comment">// 我们要在对应生成的html中引入的js </span></span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/25/webpack-babel/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">webpack-babel</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="程序猿">
+    <h3 class="avatar-name">
+      
+        勇往直前
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，资深的打酱油攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/25/web多页面/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/webpack-babel/">webpack-babel</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/webpackloader/">webpackloader</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/ES6标准模块/">ES6标准模块化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/webpack基本环境搭建/">webpack基本环境搭建</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 lujiyuan &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/recent posts" class="mobile-nav-link">最新文章</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
