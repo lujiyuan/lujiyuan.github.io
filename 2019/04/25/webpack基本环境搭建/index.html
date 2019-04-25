@@ -5,22 +5,22 @@
   
 
   
-  <title>模块类型 | 我的小站</title>
+  <title>webpack基本环境搭建 | 我的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="模块类型原生模块 可以直接引入的模块，nodejs官方提供的模块  12// 引入原生模块的方式最简单var fs = require(&apos;fs&apos;) 第三方模块 需要下载，下载之后和原生模块一样的引入方式1npm install --save mysql  1var mysql = require(&apos;mysql&apos;) 自定义模块 自定义模块就是自己利用module.exports或者exports写的">
+  <meta name="description" content="webpack需要两个模块webpack webpack-cli 初始化npm init 安装npm i –save-dev webpack webpack-cli或yarn add webpack webpack-cli –dev webpack默认配置webpack默认把./src/index.js作为入口文件打包后会生成./dist/main.js webpack自定义配置需要在项目根目录中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模块类型">
-<meta property="og:url" content="http://yoursite.com/2019/04/23/模块类型/index.html">
+<meta property="og:title" content="webpack基本环境搭建">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/webpack基本环境搭建/index.html">
 <meta property="og:site_name" content="我的小站">
-<meta property="og:description" content="模块类型原生模块 可以直接引入的模块，nodejs官方提供的模块  12// 引入原生模块的方式最简单var fs = require(&apos;fs&apos;) 第三方模块 需要下载，下载之后和原生模块一样的引入方式1npm install --save mysql  1var mysql = require(&apos;mysql&apos;) 自定义模块 自定义模块就是自己利用module.exports或者exports写的">
+<meta property="og:description" content="webpack需要两个模块webpack webpack-cli 初始化npm init 安装npm i –save-dev webpack webpack-cli或yarn add webpack webpack-cli –dev webpack默认配置webpack默认把./src/index.js作为入口文件打包后会生成./dist/main.js webpack自定义配置需要在项目根目录中">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-25T01:46:14.131Z">
+<meta property="og:updated_time" content="2019-04-25T02:26:39.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="模块类型">
-<meta name="twitter:description" content="模块类型原生模块 可以直接引入的模块，nodejs官方提供的模块  12// 引入原生模块的方式最简单var fs = require(&apos;fs&apos;) 第三方模块 需要下载，下载之后和原生模块一样的引入方式1npm install --save mysql  1var mysql = require(&apos;mysql&apos;) 自定义模块 自定义模块就是自己利用module.exports或者exports写的">
+<meta name="twitter:title" content="webpack基本环境搭建">
+<meta name="twitter:description" content="webpack需要两个模块webpack webpack-cli 初始化npm init 安装npm i –save-dev webpack webpack-cli或yarn add webpack webpack-cli –dev webpack默认配置webpack默认把./src/index.js作为入口文件打包后会生成./dist/main.js webpack自定义配置需要在项目根目录中">
   
     <link rel="alternate" href="/atom.xml" title="我的小站" type="application/atom+xml">
   
@@ -53,21 +53,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-模块类型" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-webpack基本环境搭建" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      模块类型
+      webpack基本环境搭建
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/23/模块类型/" class="article-date">
-  <time datetime="2019-04-23T06:24:47.000Z" itemprop="datePublished">2019-04-23</time>
+    <a href="/2019/04/25/webpack基本环境搭建/" class="article-date">
+  <time datetime="2019-04-25T01:30:15.000Z" itemprop="datePublished">2019-04-25</time>
 </a>
     
     
@@ -82,17 +82,19 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h1 id="模块类型"><a href="#模块类型" class="headerlink" title="模块类型"></a>模块类型</h1><h2 id="原生模块"><a href="#原生模块" class="headerlink" title="原生模块"></a>原生模块</h2><blockquote>
-<p>可以直接引入的模块，nodejs官方提供的模块</p>
+        <h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><p>需要两个模块<br>webpack webpack-cli</p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>npm i –save-dev webpack webpack-cli<br>或<br>yarn add webpack webpack-cli –dev</p>
+<h2 id="webpack默认配置"><a href="#webpack默认配置" class="headerlink" title="webpack默认配置"></a>webpack默认配置</h2><p>webpack默认把./src/index.js作为入口文件<br>打包后会生成./dist/main.js</p>
+<h2 id="webpack自定义配置"><a href="#webpack自定义配置" class="headerlink" title="webpack自定义配置"></a>webpack自定义配置</h2><p>需要在项目根目录中创建一个文件webpack.config.js</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"入口文件路径"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'文件夹名字'</span>),</span><br><span class="line">    filename: <span class="string">'文件名.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>所有的操作后都需要使用<code>npm run dev</code>重新打包</p>
+<h2 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h2><p>webpack </p>
+<blockquote>
+<p>因为webpack我们只在本地安装，所以不存在全局命令webpack</p>
 </blockquote>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入原生模块的方式最简单</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br></pre></td></tr></table></figure></div>
-<h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><blockquote>
-<p>需要下载，下载之后和原生模块一样的引入方式<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save mysql</span><br></pre></td></tr></table></figure></div></p>
-</blockquote>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>)</span><br></pre></td></tr></table></figure></div>
-<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><blockquote>
-<p>自定义模块就是自己利用module.exports或者exports写的模块<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></p>
-</blockquote>
+<p>package.json<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"webpack"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>执行npm run dev即可，会自动找到本地的webpack.config.js</p>
 
       
     </div>
@@ -107,11 +109,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/04/23/npm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/04/25/ES6标准模块/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            npm
+            ES6标准模块化
           
         </div>
       </a>
@@ -119,8 +121,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/04/23/CommonJS/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">CommonJS</div>
+      <a href="/2019/04/25/promise/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">promise</div>
         <strong class="article-nav-caption"></strong>
       </a>
     

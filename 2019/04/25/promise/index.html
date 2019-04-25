@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>promise | 我的小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="promise promise是用来解决异步操作的一个新的工具 （之前使用的回调函数），proimise把异步请求变成了链式调用，更符合我们正常的习惯  priomise方法 Promise.prototype.then Promise.prototype.catch   想要调用这两个方法就必须new Promise得到对应的promise对象  创建promise123var promise">
+<meta property="og:type" content="article">
+<meta property="og:title" content="promise">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/promise/index.html">
+<meta property="og:site_name" content="我的小站">
+<meta property="og:description" content="promise promise是用来解决异步操作的一个新的工具 （之前使用的回调函数），proimise把异步请求变成了链式调用，更符合我们正常的习惯  priomise方法 Promise.prototype.then Promise.prototype.catch   想要调用这两个方法就必须new Promise得到对应的promise对象  创建promise123var promise">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-25T02:24:44.448Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="promise">
+<meta name="twitter:description" content="promise promise是用来解决异步操作的一个新的工具 （之前使用的回调函数），proimise把异步请求变成了链式调用，更符合我们正常的习惯  priomise方法 Promise.prototype.then Promise.prototype.catch   想要调用这两个方法就必须new Promise得到对应的promise对象  创建promise123var promise">
+  
+    <link rel="alternate" href="/atom.xml" title="我的小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-promise" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      promise
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/promise/" class="article-date">
+  <time datetime="2019-04-25T01:25:15.000Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h1><blockquote>
+<p>promise是用来解决异步操作的一个新的工具 （之前使用的回调函数），proimise把异步请求变成了链式调用，更符合我们正常的习惯</p>
+</blockquote>
+<h2 id="priomise方法"><a href="#priomise方法" class="headerlink" title="priomise方法"></a>priomise方法</h2><ul>
+<li>Promise.prototype.then</li>
+<li>Promise.prototype.catch</li>
+</ul>
+<blockquote>
+<p>想要调用这两个方法就必须new Promise得到对应的promise对象</p>
+</blockquote>
+<h3 id="创建promise"><a href="#创建promise" class="headerlink" title="创建promise"></a>创建promise</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 一般会执行一些操作，如果成功则调用resolve失败则调用reject</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">  .then方法中有一个函数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  如果需要多次.then，则将catch放在最后</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 这个函数就是在new Promise时的resolve函数</span></span><br><span class="line">&#125;).catch(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 这个函数就是reject函数</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// resolve函数中的返回值</span></span><br><span class="line">promise.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">num</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// num 就是1</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果返回值是一个promise对象</span></span><br><span class="line">promise.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> promise</span><br><span class="line">&#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// res就是上一个then中返回的promise对象的.then结果</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/25/webpack基本环境搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            webpack基本环境搭建
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/24/ES6相关语法掌握/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">ES6相关语法掌握</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，资深的打酱油攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/25/webpack-babel/">webpack-babel</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/webpackloader/">webpackloader</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/ES6标准模块/">ES6标准模块化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/webpack基本环境搭建/">webpack基本环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/promise/">promise</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 lujiyuan &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

@@ -5,22 +5,22 @@
   
 
   
-  <title>模块类型 | 我的小站</title>
+  <title>webpackloader | 我的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="模块类型原生模块 可以直接引入的模块，nodejs官方提供的模块  12// 引入原生模块的方式最简单var fs = require(&apos;fs&apos;) 第三方模块 需要下载，下载之后和原生模块一样的引入方式1npm install --save mysql  1var mysql = require(&apos;mysql&apos;) 自定义模块 自定义模块就是自己利用module.exports或者exports写的">
+  <meta name="description" content="webpackloader webpack想要把某些类型的文件当成模块使用，那么就需要配置对应的loader让webpack支持  如果在入门文件中引入reset.css,那么会报错安装css-loader只是让webpack认识css文件作为模块，但是不能把css内容放在对应样式上 webpack.config.js12345678910111213module.exports = &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模块类型">
-<meta property="og:url" content="http://yoursite.com/2019/04/23/模块类型/index.html">
+<meta property="og:title" content="webpackloader">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/webpackloader/index.html">
 <meta property="og:site_name" content="我的小站">
-<meta property="og:description" content="模块类型原生模块 可以直接引入的模块，nodejs官方提供的模块  12// 引入原生模块的方式最简单var fs = require(&apos;fs&apos;) 第三方模块 需要下载，下载之后和原生模块一样的引入方式1npm install --save mysql  1var mysql = require(&apos;mysql&apos;) 自定义模块 自定义模块就是自己利用module.exports或者exports写的">
+<meta property="og:description" content="webpackloader webpack想要把某些类型的文件当成模块使用，那么就需要配置对应的loader让webpack支持  如果在入门文件中引入reset.css,那么会报错安装css-loader只是让webpack认识css文件作为模块，但是不能把css内容放在对应样式上 webpack.config.js12345678910111213module.exports = &amp;#123;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-25T01:46:14.131Z">
+<meta property="og:updated_time" content="2019-04-25T02:26:54.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="模块类型">
-<meta name="twitter:description" content="模块类型原生模块 可以直接引入的模块，nodejs官方提供的模块  12// 引入原生模块的方式最简单var fs = require(&apos;fs&apos;) 第三方模块 需要下载，下载之后和原生模块一样的引入方式1npm install --save mysql  1var mysql = require(&apos;mysql&apos;) 自定义模块 自定义模块就是自己利用module.exports或者exports写的">
+<meta name="twitter:title" content="webpackloader">
+<meta name="twitter:description" content="webpackloader webpack想要把某些类型的文件当成模块使用，那么就需要配置对应的loader让webpack支持  如果在入门文件中引入reset.css,那么会报错安装css-loader只是让webpack认识css文件作为模块，但是不能把css内容放在对应样式上 webpack.config.js12345678910111213module.exports = &amp;#123;">
   
     <link rel="alternate" href="/atom.xml" title="我的小站" type="application/atom+xml">
   
@@ -53,21 +53,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-模块类型" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-webpackloader" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      模块类型
+      webpackloader
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/23/模块类型/" class="article-date">
-  <time datetime="2019-04-23T06:24:47.000Z" itemprop="datePublished">2019-04-23</time>
+    <a href="/2019/04/25/webpackloader/" class="article-date">
+  <time datetime="2019-04-25T02:25:15.000Z" itemprop="datePublished">2019-04-25</time>
 </a>
     
     
@@ -82,17 +82,11 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h1 id="模块类型"><a href="#模块类型" class="headerlink" title="模块类型"></a>模块类型</h1><h2 id="原生模块"><a href="#原生模块" class="headerlink" title="原生模块"></a>原生模块</h2><blockquote>
-<p>可以直接引入的模块，nodejs官方提供的模块</p>
+        <h1 id="webpackloader"><a href="#webpackloader" class="headerlink" title="webpackloader"></a>webpackloader</h1><blockquote>
+<p>webpack想要把某些类型的文件当成模块使用，那么就需要配置对应的loader让webpack支持</p>
 </blockquote>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入原生模块的方式最简单</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br></pre></td></tr></table></figure></div>
-<h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><blockquote>
-<p>需要下载，下载之后和原生模块一样的引入方式<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save mysql</span><br></pre></td></tr></table></figure></div></p>
-</blockquote>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>)</span><br></pre></td></tr></table></figure></div>
-<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><blockquote>
-<p>自定义模块就是自己利用module.exports或者exports写的模块<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></p>
-</blockquote>
+<p>如果在入门文件中引入reset.css,那么会报错<br>安装css-loader只是让webpack认识css文件作为模块，但是不能把css内容放在对应样式上</p>
+<p>webpack.config.js<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>, <span class="comment">// 去匹配对应项目中的css</span></span><br><span class="line">        use: [ <span class="comment">// 匹配到的css使用对应的loader进行处理</span></span><br><span class="line">          <span class="string">'style-loader'</span>, </span><br><span class="line">          <span class="string">'css-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
 
       
     </div>
@@ -107,11 +101,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/04/23/npm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/04/25/webpack-babel/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            npm
+            webpack-babel
           
         </div>
       </a>
@@ -119,8 +113,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/04/23/CommonJS/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">CommonJS</div>
+      <a href="/2019/04/25/ES6标准模块/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">ES6标准模块化</div>
         <strong class="article-nav-caption"></strong>
       </a>
     

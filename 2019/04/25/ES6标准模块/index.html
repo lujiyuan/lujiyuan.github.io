@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ES6标准模块化 | 我的小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="模块导出123456789101112// export default 要导出的模块名export default 1export default function () &amp;#123;&amp;#125;export default &amp;#123;&amp;#125;export default []const arr = []export default arr 注意！在一个文件中，只能使用一次export d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6标准模块化">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/ES6标准模块/index.html">
+<meta property="og:site_name" content="我的小站">
+<meta property="og:description" content="模块导出123456789101112// export default 要导出的模块名export default 1export default function () &amp;#123;&amp;#125;export default &amp;#123;&amp;#125;export default []const arr = []export default arr 注意！在一个文件中，只能使用一次export d">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-25T02:26:50.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6标准模块化">
+<meta name="twitter:description" content="模块导出123456789101112// export default 要导出的模块名export default 1export default function () &amp;#123;&amp;#125;export default &amp;#123;&amp;#125;export default []const arr = []export default arr 注意！在一个文件中，只能使用一次export d">
+  
+    <link rel="alternate" href="/atom.xml" title="我的小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-ES6标准模块" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      ES6标准模块化
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/ES6标准模块/" class="article-date">
+  <time datetime="2019-04-25T01:45:20.000Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export default 要导出的模块名</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = []</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> arr</span><br></pre></td></tr></table></figure></div>
+<p><strong><em>注意！在一个文件中，只能使用一次<code>export default</code></em></strong></p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">  export const 变量 = 值</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  const 变量 = 值</span></span><br><span class="line"><span class="comment">  export &#123;变量&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  // 引入时必须使用下面方式</span></span><br><span class="line"><span class="comment">  import &#123;变量&#125; from './模块文件'</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  这种方式不可避免的需要设置别名</span></span><br><span class="line"><span class="comment">  导出时使用别名</span></span><br><span class="line"><span class="comment">  const a = 1</span></span><br><span class="line"><span class="comment">  export &#123;a as 别名&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  导入时使用别名</span></span><br><span class="line"><span class="comment">  import &#123;a as 别名&#125; from '模块文件'</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一个文件中可以同时到处多个模块</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">2</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">3</span></span><br><span class="line"><span class="keyword">export</span> &#123;a, b, c <span class="keyword">as</span> c1&#125;</span><br></pre></td></tr></table></figure></div>
+<p>如果到导出时使用的是<code>export default xxx</code>，那么导入时使用<code>import 自定义名字 from &#39;模块&#39;</code></p>
+<p>如果导出时使用的是<code>export {a}</code>, 那么导入时就得使用<code>import {a} from &#39;模块&#39;</code></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/25/webpackloader/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            webpackloader
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/25/webpack基本环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">webpack基本环境搭建</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，资深的打酱油攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/25/webpack-babel/">webpack-babel</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/webpackloader/">webpackloader</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/ES6标准模块/">ES6标准模块化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/webpack基本环境搭建/">webpack基本环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/promise/">promise</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 lujiyuan &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

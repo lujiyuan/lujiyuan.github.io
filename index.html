@@ -51,6 +51,245 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-webpack-babel" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/25/webpack-babel/">webpack-babel</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/webpack-babel/" class="article-date">
+  <time datetime="2019-04-25T02:40:30.000Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="一-了解-Babel-及生态"><a href="#一-了解-Babel-及生态" class="headerlink" title="(一) 了解 Babel 及生态"></a>(一) 了解 Babel 及生态</h2><p>现代 Javascript 主要是用 ES6 编写的。但并非每个浏览器都知道如何处理 ES6。 我们需要某种转换，这个转换步骤称为 transpiling(转译)。transpiling(转译) 是指采用 ES6 语法，转译为旧浏览器可以理解的行为。<br>Webpack 不知道如何进行转换但是有 loader(加载器) ：将它们视为转译器。<br>babel-loader 是一个 webpack 的 loader(加载器)，用于将 ES6 及以上版本转译至 ES5<br>要开始使用 loader ，我们需要安装一堆依赖项，以下已 Babel7 为主，升级建议</p>
+<ul>
+<li>@babel/core</li>
+<li>@babel/runtime 不重复转换代码</li>
+<li>@babel/preset-env: 包含 ES6、7 等版本的语法转化规则</li>
+<li>@babel/plugin-transform-runtime: 避免 polyfill 污染全局变量，减小打包体积</li>
+<li>@babel/polyfill: ES6 内置方法和函数转化垫片</li>
+<li>babel-loader: 负责 ES6 语法转化</li>
+</ul>
+<blockquote>
+<p>使用 @babel/polyfill 的原因：Babel 默认只转换新的 JavaScript 句法（syntax），而不转换新的 API，比如 Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise 等全局对象，以及一些定义在全局对象上的方法（比如 Object.assign）都不会转码。必须使用 @babel/polyfill，为当前环境提供一个垫片。<br>所谓垫片也就是垫平不同浏览器或者不同环境下的差异</p>
+</blockquote>
+<h2 id="二-安装依赖并配置"><a href="#二-安装依赖并配置" class="headerlink" title="(二) 安装依赖并配置"></a>(二) 安装依赖并配置</h2><h3 id="①-安装依赖"><a href="#①-安装依赖" class="headerlink" title="① 安装依赖"></a>① 安装依赖</h3><p><code>npm i @babel/core babel-loader @babel/preset-env @babel/plugin-transform-runtime --save-dev</code><br><code>npm i @babel/polyfill @babel/runtime --save</code></p>
+<h3 id="②-在项目的根目录中创建名为-babelrc-的新文件来配置-Babel"><a href="#②-在项目的根目录中创建名为-babelrc-的新文件来配置-Babel" class="headerlink" title="② 在项目的根目录中创建名为 .babelrc 的新文件来配置 Babel"></a>② 在项目的根目录中创建名为 .babelrc 的新文件来配置 Babel</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JSON"><figure class="iseeu highlight /json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [<span class="string">"@babel/preset-env"</span>],</span><br><span class="line">  <span class="attr">"plugins"</span>: [<span class="string">"@babel/plugin-transform-runtime"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>如果报错<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">WARNING: We noticed you&apos;re using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option. </span><br><span class="line"> </span><br><span class="line">You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`&apos;s `dependencies` section. If it doesn&apos;t, you need to run one of the following commands: </span><br><span class="line"> </span><br><span class="line">  npm install --save core-js@2    npm install --save core-js@3 </span><br><span class="line">  yarn add core-js@2              yarn add core-js@3</span><br></pre></td></tr></table></figure></div></p>
+<p>需要设置 .babelrc 设置 “corejs”: 3<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="string">"presets"</span>: [</span><br><span class="line">   [</span><br><span class="line">     <span class="string">"@babel/preset-env"</span>,</span><br><span class="line">     &#123;</span><br><span class="line">       <span class="string">"useBuiltIns"</span>: <span class="string">"usage"</span>,</span><br><span class="line">       <span class="string">"corejs"</span>: <span class="number">3</span></span><br><span class="line">     &#125;</span><br><span class="line">   ]</span><br><span class="line"> ],</span><br><span class="line"> <span class="string">"plugins"</span>: [<span class="string">"@babel/plugin-transform-runtime"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<h3 id="③-webpack-配置-loader-加载器"><a href="#③-webpack-配置-loader-加载器" class="headerlink" title="③ webpack 配置 loader(加载器)"></a>③ webpack 配置 loader(加载器)</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.js$/</span>, <span class="comment">// 使用正则来匹配 js 文件</span></span><br><span class="line">      exclude: <span class="regexp">/node_modules/</span>, <span class="comment">// 排除依赖包文件夹</span></span><br><span class="line">      use: &#123;</span><br><span class="line">        loader: <span class="string">'babel-loader'</span> <span class="comment">// 使用 babel-loader</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="④-在-入口文件中-全局引入-babel-polyfill-并写入-ES6-语法，并执行-npm-run-build-打包"><a href="#④-在-入口文件中-全局引入-babel-polyfill-并写入-ES6-语法，并执行-npm-run-build-打包" class="headerlink" title="④ 在 入口文件中 全局引入 @babel/polyfill 并写入 ES6 语法，并执行 npm run build 打包"></a>④ 在 入口文件中 全局引入 @babel/polyfill 并写入 ES6 语法，并执行 npm run build 打包</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局引入</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'@babel/polyfill'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试 ES6 语法是否通过 babel 转译</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">const</span> isES6 = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(...array)</span><br><span class="line"></span><br><span class="line">isES6()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;), <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;)]</span><br><span class="line"></span><br><span class="line">arr.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h3 id="⑤-打包完之后使用-IE-浏览器打开-index-html-文件，看控制台是否有输出，如果是新版的-chrome，是可以使用-es6-语法的，所以要用-IE-这个万恶之源试试"><a href="#⑤-打包完之后使用-IE-浏览器打开-index-html-文件，看控制台是否有输出，如果是新版的-chrome，是可以使用-es6-语法的，所以要用-IE-这个万恶之源试试" class="headerlink" title="⑤ 打包完之后使用 IE 浏览器打开 index.html 文件，看控制台是否有输出，如果是新版的 chrome，是可以使用 es6 语法的，所以要用 IE 这个万恶之源试试"></a>⑤ 打包完之后使用 IE 浏览器打开 index.html 文件，看控制台是否有输出，如果是新版的 chrome，是可以使用 es6 语法的，所以要用 IE 这个万恶之源试试</h3><p>全局引入 @babel/polyfill 的这种方式可能会导入代码中不需要的 polyfill，从而使打包体积更大<br>更改 .babelrc，只转译我们使用到的<br>{<br>  “presets”: [<br>    [<br>      “@babel/preset-env”,<br>      {<br>        “useBuiltIns”: “usage”<br>      }<br>    ]<br>  ],<br>  “plugins”: [“@babel/plugin-transform-runtime”]<br>}<br>将全局引入这段代码注释掉，再次打包</p>
+<h2 id="三-了解-browserslistrc-配置文件"><a href="#三-了解-browserslistrc-配置文件" class="headerlink" title="(三) 了解 .browserslistrc 配置文件"></a>(三) 了解 .browserslistrc 配置文件</h2><p>browserslistrc 用于在不同前端工具之间共享目标浏览器和 Node.js 版本的配置<br>可以看看 browserslist 兼容浏览器的页面<br>当您将以下内容添加到 package.json 时，所有工具都会自动找到目标浏览器：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"browserslist": [</span><br><span class="line">  "&gt; 1%",</span><br><span class="line">  "last 2 version",</span><br><span class="line">  <span class="string">"not ie &lt;= 8"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>也可以创建 .browserslistrc 文件单独写配置</p>
+<h3 id="所支持的浏览器版本"><a href="#所支持的浏览器版本" class="headerlink" title="所支持的浏览器版本"></a>所支持的浏览器版本</h3><ul>
+<li><p>1% # 全球使用情况统计选择的浏览器版本</p>
+</li>
+<li><p>last 2 version # 每个浏览器的最后两个版本</p>
+</li>
+<li><p>not ie &lt;= 8 # 排除小于 ie8 以下的浏览器</p>
+</li>
+</ul>
+<p>该项目还是使用单独创建配置文件的方式，便于理解，如果觉得配置文件不好，也可以写在 package.json 中</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-webpackloader" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/25/webpackloader/">webpackloader</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/webpackloader/" class="article-date">
+  <time datetime="2019-04-25T02:25:15.000Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="webpackloader"><a href="#webpackloader" class="headerlink" title="webpackloader"></a>webpackloader</h1><blockquote>
+<p>webpack想要把某些类型的文件当成模块使用，那么就需要配置对应的loader让webpack支持</p>
+</blockquote>
+<p>如果在入门文件中引入reset.css,那么会报错<br>安装css-loader只是让webpack认识css文件作为模块，但是不能把css内容放在对应样式上</p>
+<p>webpack.config.js<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>, <span class="comment">// 去匹配对应项目中的css</span></span><br><span class="line">        use: [ <span class="comment">// 匹配到的css使用对应的loader进行处理</span></span><br><span class="line">          <span class="string">'style-loader'</span>, </span><br><span class="line">          <span class="string">'css-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-ES6标准模块" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/25/ES6标准模块/">ES6标准模块化</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/ES6标准模块/" class="article-date">
+  <time datetime="2019-04-25T01:45:20.000Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export default 要导出的模块名</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = []</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> arr</span><br></pre></td></tr></table></figure></div>
+<p><strong><em>注意！在一个文件中，只能使用一次<code>export default</code></em></strong></p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">  export const 变量 = 值</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  const 变量 = 值</span></span><br><span class="line"><span class="comment">  export &#123;变量&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  // 引入时必须使用下面方式</span></span><br><span class="line"><span class="comment">  import &#123;变量&#125; from './模块文件'</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  这种方式不可避免的需要设置别名</span></span><br><span class="line"><span class="comment">  导出时使用别名</span></span><br><span class="line"><span class="comment">  const a = 1</span></span><br><span class="line"><span class="comment">  export &#123;a as 别名&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  导入时使用别名</span></span><br><span class="line"><span class="comment">  import &#123;a as 别名&#125; from '模块文件'</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一个文件中可以同时到处多个模块</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">2</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">3</span></span><br><span class="line"><span class="keyword">export</span> &#123;a, b, c <span class="keyword">as</span> c1&#125;</span><br></pre></td></tr></table></figure></div>
+<p>如果到导出时使用的是<code>export default xxx</code>，那么导入时使用<code>import 自定义名字 from &#39;模块&#39;</code></p>
+<p>如果导出时使用的是<code>export {a}</code>, 那么导入时就得使用<code>import {a} from &#39;模块&#39;</code></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-webpack基本环境搭建" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/25/webpack基本环境搭建/">webpack基本环境搭建</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/webpack基本环境搭建/" class="article-date">
+  <time datetime="2019-04-25T01:30:15.000Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><p>需要两个模块<br>webpack webpack-cli</p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>npm i –save-dev webpack webpack-cli<br>或<br>yarn add webpack webpack-cli –dev</p>
+<h2 id="webpack默认配置"><a href="#webpack默认配置" class="headerlink" title="webpack默认配置"></a>webpack默认配置</h2><p>webpack默认把./src/index.js作为入口文件<br>打包后会生成./dist/main.js</p>
+<h2 id="webpack自定义配置"><a href="#webpack自定义配置" class="headerlink" title="webpack自定义配置"></a>webpack自定义配置</h2><p>需要在项目根目录中创建一个文件webpack.config.js</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"入口文件路径"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'文件夹名字'</span>),</span><br><span class="line">    filename: <span class="string">'文件名.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>所有的操作后都需要使用<code>npm run dev</code>重新打包</p>
+<h2 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h2><p>webpack </p>
+<blockquote>
+<p>因为webpack我们只在本地安装，所以不存在全局命令webpack</p>
+</blockquote>
+<p>package.json<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"webpack"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>执行npm run dev即可，会自动找到本地的webpack.config.js</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-promise" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/25/promise/">promise</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/promise/" class="article-date">
+  <time datetime="2019-04-25T01:25:15.000Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h1><blockquote>
+<p>promise是用来解决异步操作的一个新的工具 （之前使用的回调函数），proimise把异步请求变成了链式调用，更符合我们正常的习惯</p>
+</blockquote>
+<h2 id="priomise方法"><a href="#priomise方法" class="headerlink" title="priomise方法"></a>priomise方法</h2><ul>
+<li>Promise.prototype.then</li>
+<li>Promise.prototype.catch</li>
+</ul>
+<blockquote>
+<p>想要调用这两个方法就必须new Promise得到对应的promise对象</p>
+</blockquote>
+<h3 id="创建promise"><a href="#创建promise" class="headerlink" title="创建promise"></a>创建promise</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 一般会执行一些操作，如果成功则调用resolve失败则调用reject</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">  .then方法中有一个函数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  如果需要多次.then，则将catch放在最后</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 这个函数就是在new Promise时的resolve函数</span></span><br><span class="line">&#125;).catch(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 这个函数就是reject函数</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// resolve函数中的返回值</span></span><br><span class="line">promise.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">num</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// num 就是1</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果返回值是一个promise对象</span></span><br><span class="line">promise.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> promise</span><br><span class="line">&#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// res就是上一个then中返回的promise对象的.then结果</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-ES6相关语法掌握" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -301,91 +540,12 @@
 </article>
 
   
-    <article id="post-CommonJS" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/CommonJS/">CommonJS</a>
-    </h1>
-  
 
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/04/23/CommonJS/" class="article-date">
-  <time datetime="2019-04-23T05:25:15.000Z" itemprop="datePublished">2019-04-23</time>
-</a>
-    
-    
-  </div>
-  
 
-  <div class="article-inner">
+  <nav id="page-nav">
     
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h1 id="Node的模块化"><a href="#Node的模块化" class="headerlink" title="Node的模块化"></a>Node的模块化</h1><blockquote>
-<p>CommonJS是NodeJS使用的模块化标准</p>
-</blockquote>
-<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出的是一个对象，得到的是这个对象，对象中的属性xxx就是模块</span></span><br><span class="line">exports.xxx = 模块</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出什么，得到的就是什么</span></span><br><span class="line"><span class="built_in">module</span>.exports = 模块</span><br></pre></td></tr></table></figure></div>
-<p>exports.xxx可以使用多次，module.exports只有最后一次生效</p>
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = requrie(<span class="string">'模块文件'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果模块利用的是exports.xxx导出的，那么导入的就是exports这个对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果模块利用的是module.exports导出的，那么导入的就是后面跟着的内容</span></span><br></pre></td></tr></table></figure></div>
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-hello-world" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/04/23/hello-world/" class="article-date">
-  <time datetime="2019-04-23T05:17:13.291Z" itemprop="datePublished">2019-04-23</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 
 </section>
@@ -431,23 +591,23 @@
       <ul>
         
           <li>
-            <a href="/2019/04/24/ES6相关语法掌握/">ES6相关语法掌握</a>
+            <a href="/2019/04/25/webpack-babel/">webpack-babel</a>
           </li>
         
           <li>
-            <a href="/2019/04/24/exporess路由参数获取/">exporess路由参数获取</a>
+            <a href="/2019/04/25/webpackloader/">webpackloader</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/express安装/">express安装</a>
+            <a href="/2019/04/25/ES6标准模块/">ES6标准模块化</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/npm/">npm</a>
+            <a href="/2019/04/25/webpack基本环境搭建/">webpack基本环境搭建</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/模块类型/">模块类型</a>
+            <a href="/2019/04/25/promise/">promise</a>
           </li>
         
       </ul>
@@ -459,7 +619,7 @@
       </div>
       <footer id="footer">
   <div class="foot-box global-width">
-    &copy; 2019 John Doe &nbsp;&nbsp;
+    &copy; 2019 lujiyuan &nbsp;&nbsp;
     Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
     <br>
