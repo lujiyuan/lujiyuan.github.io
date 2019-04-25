@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>npm | 我的小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install 模块名 --save">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm">
+<meta property="og:url" content="http://yoursite.com/2019/04/23/npm/index.html">
+<meta property="og:site_name" content="我的小站">
+<meta property="og:description" content="npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install 模块名 --save">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-25T01:45:59.811Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm">
+<meta name="twitter:description" content="npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install 模块名 --save">
+  
+    <link rel="alternate" href="/atom.xml" title="我的小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-npm" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      npm
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/23/npm/" class="article-date">
+  <time datetime="2019-04-23T07:43:27.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
+<p>初始化的目的就是为了生成package.json</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块</p>
+<p>在安装时使用<code>npm install 模块名 --save</code>可以将模块名保存在dependencies</p>
+<p>使用<code>npm install 模块名 --save-dev</code>可以将模块名保存在devDependencies</p>
+<p>package.json中保留的是模块清单，不管在哪个位置，只要有package.json，我们都可以直接安装所有清单上的模块</p>
+<h2 id="安装（下载模块）"><a href="#安装（下载模块）" class="headerlink" title="安装（下载模块）"></a>安装（下载模块）</h2><p>npm install -g 模块名 // 全局安装</p>
+<p>npm install 模块名 –save</p>
+<p>npm install 模块名 –save-dev</p>
+<p>npm install // 直接根据package中所需要的模块进行自动安装</p>
+<h2 id="删除模块"><a href="#删除模块" class="headerlink" title="删除模块"></a>删除模块</h2><p>npm uninstall 模块名 –save<br>npm uninstall 模块名 –g</p>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><blockquote>
+<p>facebook和一些大厂合作退出一个nodejs包管理工具，下载更快</p>
+</blockquote>
+<p>npm install -g yarn</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>yarn global add 模块名</p>
+<p>yarn add 模块名</p>
+<p>yarn add 模块名 –dev</p>
+<p>yarn</p>
+<h2 id="删除模块-1"><a href="#删除模块-1" class="headerlink" title="删除模块"></a>删除模块</h2><p>yarn remove 模块名</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/23/express安装/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            express安装
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/23/模块类型/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">模块类型</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，资深的打酱油攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/24/ES6相关语法掌握/">ES6相关语法掌握</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/24/exporess路由参数获取/">exporess路由参数获取</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/express安装/">express安装</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/npm/">npm</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/模块类型/">模块类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
