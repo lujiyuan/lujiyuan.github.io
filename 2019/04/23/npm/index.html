@@ -5,22 +5,22 @@
   
 
   
-  <title>新文章 | 我的小站</title>
+  <title>article | 我的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="#这是我的第二篇文章1234567897hexo">
+  <meta name="description" content="npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install 模块名 --save">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新文章">
-<meta property="og:url" content="http://yoursite.com/2019/04/23/新文章/index.html">
+<meta property="og:title" content="article">
+<meta property="og:url" content="http://yoursite.com/2019/04/23/npm/index.html">
 <meta property="og:site_name" content="我的小站">
-<meta property="og:description" content="#这是我的第二篇文章1234567897hexo">
+<meta property="og:description" content="npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install 模块名 --save">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-23T06:26:20.962Z">
+<meta property="og:updated_time" content="2019-04-25T00:26:35.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新文章">
-<meta name="twitter:description" content="#这是我的第二篇文章1234567897hexo">
+<meta name="twitter:title" content="article">
+<meta name="twitter:description" content="npm常用命令初始化npm init 初始化的目的就是为了生成package.json package.json该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块 在安装时使用npm install 模块名 --save可以将模块名保存在dependencies 使用npm install 模块名 --save">
   
     <link rel="alternate" href="/atom.xml" title="我的小站" type="application/atom+xml">
   
@@ -53,21 +53,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-新文章" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-npm" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      新文章
+      article
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/23/新文章/" class="article-date">
-  <time datetime="2019-04-23T06:24:47.000Z" itemprop="datePublished">2019-04-23</time>
+    <a href="/2019/04/23/npm/" class="article-date">
+  <time datetime="2019-04-23T07:43:27.000Z" itemprop="datePublished">2019-04-23</time>
 </a>
     
     
@@ -82,7 +82,26 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>#这是我的第二篇文章<br>1234567897hexo</p>
+        <h1 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
+<p>初始化的目的就是为了生成package.json</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块</p>
+<p>在安装时使用<code>npm install 模块名 --save</code>可以将模块名保存在dependencies</p>
+<p>使用<code>npm install 模块名 --save-dev</code>可以将模块名保存在devDependencies</p>
+<p>package.json中保留的是模块清单，不管在哪个位置，只要有package.json，我们都可以直接安装所有清单上的模块</p>
+<h2 id="安装（下载模块）"><a href="#安装（下载模块）" class="headerlink" title="安装（下载模块）"></a>安装（下载模块）</h2><p>npm install -g 模块名 // 全局安装</p>
+<p>npm install 模块名 –save</p>
+<p>npm install 模块名 –save-dev</p>
+<p>npm install // 直接根据package中所需要的模块进行自动安装</p>
+<h2 id="删除模块"><a href="#删除模块" class="headerlink" title="删除模块"></a>删除模块</h2><p>npm uninstall 模块名 –save<br>npm uninstall 模块名 –g</p>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><blockquote>
+<p>facebook和一些大厂合作退出一个nodejs包管理工具，下载更快</p>
+</blockquote>
+<p>npm install -g yarn</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>yarn global add 模块名</p>
+<p>yarn add 模块名</p>
+<p>yarn add 模块名 –dev</p>
+<p>yarn</p>
+<h2 id="删除模块-1"><a href="#删除模块-1" class="headerlink" title="删除模块"></a>删除模块</h2><p>yarn remove 模块名</p>
 
       
     </div>
@@ -97,11 +116,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/04/23/article/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/04/23/express安装/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            article
+            newmessage
           
         </div>
       </a>
@@ -109,8 +128,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/04/23/test/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">test</div>
+      <a href="/2019/04/23/模块类型/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">新文章</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -179,23 +198,23 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/2019/04/24/test2019/">test2019</a>
+            <a href="/2019/04/25/ES6相关语法掌握/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/newmessage/">newmessage</a>
+            <a href="/2019/04/24/exporess路由参数获取/">test2019</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/article/">article</a>
+            <a href="/2019/04/23/express安装/">newmessage</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/新文章/">新文章</a>
+            <a href="/2019/04/23/npm/">article</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/test/">test</a>
+            <a href="/2019/04/23/模块类型/">新文章</a>
           </li>
         
       </ul>

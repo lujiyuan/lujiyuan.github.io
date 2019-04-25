@@ -51,20 +51,69 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
-    <article id="post-test2019" class="article global-container article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ES6相关语法掌握" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/2019/04/25/ES6相关语法掌握/" class="article-date">
+  <time datetime="2019-04-25T00:29:05.961Z" itemprop="datePublished">2019-04-25</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p>const<br>let</p>
+<h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><ul>
+<li><p>map<br>根据数组生成相同长度的新数组</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'张三'</span>,</span><br><span class="line">    age: <span class="number">18</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'李四'</span>,</span><br><span class="line">    age: <span class="number">20</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ['张三', '李四']</span></span><br><span class="line">arr.map(<span class="function"><span class="keyword">function</span> (<span class="params">stu, index, arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> stu.name</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>filter<br>根据数组筛选符合条件的内容组成新的数组，新数组长度可能会变，但是新数组中的结构不会改变</p>
+</li>
+<li>forEach<br>代替for循环</li>
+<li>some<br>数组中是否有某个值符合条件</li>
+<li>every<br>数组中是否所有值都符合条件</li>
+<li>reduce<br>累加</li>
+<li>reduceRight<br>从右边累加</li>
+<li><p>find<br>根据条件去数组中找到对应的符合条件的值，只会找到第一个</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'张三'</span>,</span><br><span class="line">    age: <span class="number">18</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'李四'</span>,</span><br><span class="line">    age: <span class="number">20</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// var stu = arr.find(stu =&gt; stu.name === '张三')</span></span><br><span class="line"><span class="keyword">var</span> stu = arr.find(<span class="function"><span class="keyword">function</span> (<span class="params">stu</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> stu.name === <span class="string">'张三'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>indexOf</p>
+</li>
+<li>lastIndexOf</li>
+</ul>
+<p>##　箭头函数</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">() =&gt; &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;</span><br><span class="line"><span class="keyword">var</span> fn = 形参 =&gt; &#123;&#125;</span><br><span class="line"><span class="keyword">var</span> fn = 形参 =&gt; 返回值</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">x, y</span>) =&gt;</span> x + y</span><br></pre></td></tr></table></figure></div>
+<h2 id="对象新写法"><a href="#对象新写法" class="headerlink" title="对象新写法"></a>对象新写法</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"张三"</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  fn () &#123;&#125;,</span><br><span class="line">  name: name,</span><br><span class="line">  name,</span><br><span class="line">  age: <span class="string">'age'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id = req.query.id</span><br><span class="line"><span class="keyword">var</span> a = req.query.a</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123;id, a&#125; = req.query</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">var</span> [num1, num2] = arr</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num1 = arr[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">var</span> num2 = arr[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'张三'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123;name, <span class="attr">age</span>: newAge&#125; = obj</span><br></pre></td></tr></table></figure></div>
+<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="comment">// arr1.concat(arr2)</span></span><br><span class="line">arr1.push(arr2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr3 = [...arr1, ...arr2]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  name: <span class="string">'张三'</span>,</span><br><span class="line">  age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj3 = &#123;</span><br><span class="line">  ...obj1, ...obj2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h2><h2 id="模块真正标准模块（目前所有浏览器都不支持这种标准）"><a href="#模块真正标准模块（目前所有浏览器都不支持这种标准）" class="headerlink" title="模块真正标准模块（目前所有浏览器都不支持这种标准）"></a>模块真正标准模块（目前所有浏览器都不支持这种标准）</h2>
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-exporess路由参数获取" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/24/test2019/">test2019</a>
+      <a class="article-title" href="/2019/04/24/exporess路由参数获取/">test2019</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/24/test2019/" class="article-date">
+    <a href="/2019/04/24/exporess路由参数获取/" class="article-date">
   <time datetime="2019-04-24T09:33:12.000Z" itemprop="datePublished">2019-04-24</time>
 </a>
     
@@ -76,7 +125,17 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>#zhes 2019!!!!!!wwwww11111111</p>
+        <h1 id="express"><a href="#express" class="headerlink" title="express"></a>express</h1><h2 id="express路由"><a href="#express路由" class="headerlink" title="express路由"></a>express路由</h2><blockquote>
+<p>routes/index.js</p>
+</blockquote>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> router = express.Router();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个可以进行GET请求路由</span></span><br><span class="line">router.get(<span class="string">'path'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个可以进行POST请求的路由</span></span><br><span class="line">router.post(<span class="string">'path'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h2 id="express路由参数获取"><a href="#express路由参数获取" class="headerlink" title="express路由参数获取"></a>express路由参数获取</h2><h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'path'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// req.query.key 就是对应的query参数</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'path'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// req.body.key 就是对应的post请求的参数</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'path/:id'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// path/1 path/2 path/n</span></span><br><span class="line">  <span class="comment">// req.params.id就是对应url中的值</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h2 id="获取参数后进行操作"><a href="#获取参数后进行操作" class="headerlink" title="获取参数后进行操作"></a>获取参数后进行操作</h2><blockquote>
+<p>一般获取到参数后，去查询数据库，得到结果后返回给前台</p>
+</blockquote>
+<p><code>`</code></p>
 
       
     </div>
@@ -87,20 +146,20 @@
 </article>
 
   
-    <article id="post-newmessage" class="article global-container article-type-post" itemscope itemprop="blogPost">
+    <article id="post-express安装" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/newmessage/">newmessage</a>
+      <a class="article-title" href="/2019/04/23/express安装/">newmessage</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/23/newmessage/" class="article-date">
+    <a href="/2019/04/23/express安装/" class="article-date">
   <time datetime="2019-04-23T12:05:34.000Z" itemprop="datePublished">2019-04-23</time>
 </a>
     
@@ -112,8 +171,15 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>#新的文章</p>
-<p>新文章xiugaoceshi huange moban</p>
+        <h1 id="express"><a href="#express" class="headerlink" title="express"></a>express</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>npm install -g exporess-generator</p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>express 项目名 –ejs</p>
+<h2 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h2><blockquote>
+<p>package.json中有一个配置script</p>
+</blockquote>
+<p>安装模块<br>npm install</p>
+<p>运行项目<br>npm start</p>
+<p>浏览项目<br>localhost:3000</p>
+<p>自动重启项目<br>nodemon</p>
 
       
     </div>
@@ -124,20 +190,20 @@
 </article>
 
   
-    <article id="post-article" class="article global-container article-type-post" itemscope itemprop="blogPost">
+    <article id="post-npm" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/article/">article</a>
+      <a class="article-title" href="/2019/04/23/npm/">article</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/23/article/" class="article-date">
+    <a href="/2019/04/23/npm/" class="article-date">
   <time datetime="2019-04-23T07:43:27.000Z" itemprop="datePublished">2019-04-23</time>
 </a>
     
@@ -149,81 +215,7 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>#这是新的文章</p>
-<p>这是测试的第三篇文章</p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-新文章" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/新文章/">新文章</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/04/23/新文章/" class="article-date">
-  <time datetime="2019-04-23T06:24:47.000Z" itemprop="datePublished">2019-04-23</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>#这是我的第二篇文章<br>1234567897hexo</p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-test" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/test/">test</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/04/23/test/" class="article-date">
-  <time datetime="2019-04-23T05:25:15.000Z" itemprop="datePublished">2019-04-23</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>#这是我的第一篇文章</p>
-<h1 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
+        <h1 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
 <p>初始化的目的就是为了生成package.json</p>
 <h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块</p>
 <p>在安装时使用<code>npm install 模块名 --save</code>可以将模块名保存在dependencies</p>
@@ -244,6 +236,92 @@
 <p>yarn</p>
 <h2 id="删除模块-1"><a href="#删除模块-1" class="headerlink" title="删除模块"></a>删除模块</h2><p>yarn remove 模块名</p>
 
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-模块类型" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/模块类型/">新文章</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/23/模块类型/" class="article-date">
+  <time datetime="2019-04-23T06:24:47.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="模块类型"><a href="#模块类型" class="headerlink" title="模块类型"></a>模块类型</h1><h2 id="原生模块"><a href="#原生模块" class="headerlink" title="原生模块"></a>原生模块</h2><blockquote>
+<p>可以直接引入的模块，nodejs官方提供的模块</p>
+</blockquote>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入原生模块的方式最简单</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br></pre></td></tr></table></figure></div>
+<h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><blockquote>
+<p>需要下载，下载之后和原生模块一样的引入方式<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save mysql</span><br></pre></td></tr></table></figure></div></p>
+</blockquote>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>)</span><br></pre></td></tr></table></figure></div>
+<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><blockquote>
+<p>自定义模块就是自己利用module.exports或者exports写的模块<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-CommonJS" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/CommonJS/">test</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/23/CommonJS/" class="article-date">
+  <time datetime="2019-04-23T05:25:15.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="Node的模块化"><a href="#Node的模块化" class="headerlink" title="Node的模块化"></a>Node的模块化</h1><blockquote>
+<p>CommonJS是NodeJS使用的模块化标准</p>
+</blockquote>
+<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出的是一个对象，得到的是这个对象，对象中的属性xxx就是模块</span></span><br><span class="line">exports.xxx = 模块</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出什么，得到的就是什么</span></span><br><span class="line"><span class="built_in">module</span>.exports = 模块</span><br></pre></td></tr></table></figure></div>
+<p>exports.xxx可以使用多次，module.exports只有最后一次生效</p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = requrie(<span class="string">'模块文件'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果模块利用的是exports.xxx导出的，那么导入的就是exports这个对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果模块利用的是module.exports导出的，那么导入的就是后面跟着的内容</span></span><br></pre></td></tr></table></figure></div>
       
     </div>
     
@@ -343,23 +421,23 @@
       <ul>
         
           <li>
-            <a href="/2019/04/24/test2019/">test2019</a>
+            <a href="/2019/04/25/ES6相关语法掌握/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/newmessage/">newmessage</a>
+            <a href="/2019/04/24/exporess路由参数获取/">test2019</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/article/">article</a>
+            <a href="/2019/04/23/express安装/">newmessage</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/新文章/">新文章</a>
+            <a href="/2019/04/23/npm/">article</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/test/">test</a>
+            <a href="/2019/04/23/模块类型/">新文章</a>
           </li>
         
       </ul>

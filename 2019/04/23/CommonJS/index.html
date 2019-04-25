@@ -5,22 +5,22 @@
   
 
   
-  <title>newmessage | 我的小站</title>
+  <title>test | 我的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="#新的文章 新文章xiugaoceshi huange moban">
+  <meta name="description" content="Node的模块化 CommonJS是NodeJS使用的模块化标准  导出12345// 导出的是一个对象，得到的是这个对象，对象中的属性xxx就是模块exports.xxx = 模块// 导出什么，得到的就是什么module.exports = 模块 exports.xxx可以使用多次，module.exports只有最后一次生效 引入123456var num = requrie(&apos;模块文件&apos;)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="newmessage">
-<meta property="og:url" content="http://yoursite.com/2019/04/23/newmessage/index.html">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://yoursite.com/2019/04/23/CommonJS/index.html">
 <meta property="og:site_name" content="我的小站">
-<meta property="og:description" content="#新的文章 新文章xiugaoceshi huange moban">
+<meta property="og:description" content="Node的模块化 CommonJS是NodeJS使用的模块化标准  导出12345// 导出的是一个对象，得到的是这个对象，对象中的属性xxx就是模块exports.xxx = 模块// 导出什么，得到的就是什么module.exports = 模块 exports.xxx可以使用多次，module.exports只有最后一次生效 引入123456var num = requrie(&apos;模块文件&apos;)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-23T12:32:16.768Z">
+<meta property="og:updated_time" content="2019-04-24T12:46:09.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="newmessage">
-<meta name="twitter:description" content="#新的文章 新文章xiugaoceshi huange moban">
+<meta name="twitter:title" content="test">
+<meta name="twitter:description" content="Node的模块化 CommonJS是NodeJS使用的模块化标准  导出12345// 导出的是一个对象，得到的是这个对象，对象中的属性xxx就是模块exports.xxx = 模块// 导出什么，得到的就是什么module.exports = 模块 exports.xxx可以使用多次，module.exports只有最后一次生效 引入123456var num = requrie(&apos;模块文件&apos;)">
   
     <link rel="alternate" href="/atom.xml" title="我的小站" type="application/atom+xml">
   
@@ -53,21 +53,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-newmessage" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-CommonJS" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      newmessage
+      test
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/23/newmessage/" class="article-date">
-  <time datetime="2019-04-23T12:05:34.000Z" itemprop="datePublished">2019-04-23</time>
+    <a href="/2019/04/23/CommonJS/" class="article-date">
+  <time datetime="2019-04-23T05:25:15.000Z" itemprop="datePublished">2019-04-23</time>
 </a>
     
     
@@ -82,9 +82,12 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>#新的文章</p>
-<p>新文章xiugaoceshi huange moban</p>
-
+        <h1 id="Node的模块化"><a href="#Node的模块化" class="headerlink" title="Node的模块化"></a>Node的模块化</h1><blockquote>
+<p>CommonJS是NodeJS使用的模块化标准</p>
+</blockquote>
+<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出的是一个对象，得到的是这个对象，对象中的属性xxx就是模块</span></span><br><span class="line">exports.xxx = 模块</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出什么，得到的就是什么</span></span><br><span class="line"><span class="built_in">module</span>.exports = 模块</span><br></pre></td></tr></table></figure></div>
+<p>exports.xxx可以使用多次，module.exports只有最后一次生效</p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = requrie(<span class="string">'模块文件'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果模块利用的是exports.xxx导出的，那么导入的就是exports这个对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果模块利用的是module.exports导出的，那么导入的就是后面跟着的内容</span></span><br></pre></td></tr></table></figure></div>
       
     </div>
     
@@ -98,11 +101,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/04/24/test2019/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/04/23/模块类型/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            test2019
+            新文章
           
         </div>
       </a>
@@ -110,8 +113,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/04/23/article/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">article</div>
+      <a href="/2019/04/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Hello World</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -180,23 +183,23 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/2019/04/24/test2019/">test2019</a>
+            <a href="/2019/04/25/ES6相关语法掌握/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/newmessage/">newmessage</a>
+            <a href="/2019/04/24/exporess路由参数获取/">test2019</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/article/">article</a>
+            <a href="/2019/04/23/express安装/">newmessage</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/新文章/">新文章</a>
+            <a href="/2019/04/23/npm/">article</a>
           </li>
         
           <li>
-            <a href="/2019/04/23/test/">test</a>
+            <a href="/2019/04/23/模块类型/">新文章</a>
           </li>
         
       </ul>
