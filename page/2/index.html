@@ -53,6 +53,52 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-模块类型" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/模块类型/">模块类型</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/23/模块类型/" class="article-date">
+  <time datetime="2019-04-23T06:24:47.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="模块类型"><a href="#模块类型" class="headerlink" title="模块类型"></a>模块类型</h1><h2 id="原生模块"><a href="#原生模块" class="headerlink" title="原生模块"></a>原生模块</h2><blockquote>
+<p>可以直接引入的模块，nodejs官方提供的模块</p>
+</blockquote>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入原生模块的方式最简单</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br></pre></td></tr></table></figure></div>
+<h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><blockquote>
+<p>需要下载，下载之后和原生模块一样的引入方式<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save mysql</span><br></pre></td></tr></table></figure></div></p>
+</blockquote>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>)</span><br></pre></td></tr></table></figure></div>
+<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><blockquote>
+<p>自定义模块就是自己利用module.exports或者exports写的模块<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-CommonJS" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -84,42 +130,6 @@
 <h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出的是一个对象，得到的是这个对象，对象中的属性xxx就是模块</span></span><br><span class="line">exports.xxx = 模块</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出什么，得到的就是什么</span></span><br><span class="line"><span class="built_in">module</span>.exports = 模块</span><br></pre></td></tr></table></figure></div>
 <p>exports.xxx可以使用多次，module.exports只有最后一次生效</p>
 <h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = requrie(<span class="string">'模块文件'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果模块利用的是exports.xxx导出的，那么导入的就是exports这个对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果模块利用的是module.exports导出的，那么导入的就是后面跟着的内容</span></span><br></pre></td></tr></table></figure></div>
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-web多页面" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/web多页面/">webpack多页面配置</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/04/23/web多页面/" class="article-date">
-  <time datetime="2019-04-23T05:25:15.000Z" itemprop="datePublished">2019-04-23</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h1 id="webpack多页面配置"><a href="#webpack多页面配置" class="headerlink" title="webpack多页面配置"></a>webpack多页面配置</h1><h2 id="多入口文件"><a href="#多入口文件" class="headerlink" title="多入口文件"></a>多入口文件</h2><p>webpack.config.js<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = requrie(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    名字: <span class="string">'入口文件.js路径'</span>,</span><br><span class="line">    名字<span class="number">2</span>: <span class="string">'入口文件2.js路径'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    publicPath: <span class="string">''</span>, <span class="comment">// 表示html引入相关资源时的前缀</span></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'js/[name].bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 插件配置</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="comment">// HTML需要根据写好的HTML模板自动生成</span></span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      title: <span class="string">''</span>, <span class="comment">// 模板中可以通过&lt;%=htmlWebpackPlugin.options.title%&gt;获取到</span></span><br><span class="line">      template: <span class="string">'模板路径'</span>, <span class="comment">// 模板就是一个html文件</span></span><br><span class="line">      filename: <span class="string">'index.html'</span>, <span class="comment">// 根据模板生成的HTML名字</span></span><br><span class="line">      chunks: [<span class="string">'入口文件名字'</span>] <span class="comment">// 我们要在对应生成的html中引入的js </span></span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
-
       
     </div>
     
@@ -224,6 +234,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/25/web多页面/">webpack多页面配置</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/25/webpack-babel/">webpack-babel</a>
           </li>
         
@@ -237,10 +251,6 @@
         
           <li>
             <a href="/2019/04/25/webpack基本环境搭建/">webpack基本环境搭建</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/25/promise/">promise</a>
           </li>
         
       </ul>
