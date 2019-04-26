@@ -53,6 +53,44 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-webpack配置" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/webpack配置/">webpack配置</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/26/webpack配置/" class="article-date">
+  <time datetime="2019-04-26T01:33:12.000Z" itemprop="datePublished">2019-04-26</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="webpack配置"><a href="#webpack配置" class="headerlink" title="webpack配置"></a>webpack配置</h1><blockquote>
+<p>babel css html chunk<br>webpack.config.js<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"><span class="keyword">const</span> CleanWebpackPlugin = <span class="built_in">require</span>(<span class="string">'clean-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// 入口文件</span></span><br><span class="line">  entry: &#123;</span><br><span class="line">    入口名字: <span class="string">'路径'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    publicPath: <span class="string">'./'</span>, <span class="comment">// 未来html中引入时前缀</span></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">    filename: <span class="string">'[name].bundle.js'</span>,</span><br><span class="line">    chunkFilename: <span class="string">'[name].chunk.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  optimization: &#123;</span><br><span class="line">    splitChunks: &#123;</span><br><span class="line">      <span class="comment">// include all types of chunks</span></span><br><span class="line">      chunks: <span class="string">'all'</span>,</span><br><span class="line">      cacheGroups: &#123;</span><br><span class="line">        vendors: &#123;</span><br><span class="line">          test: <span class="regexp">/[\\/]node_modules[\\/]/</span>,</span><br><span class="line">          priority: <span class="number">-10</span> <span class="comment">// 打包的优先级</span></span><br><span class="line">        &#125;,</span><br><span class="line">        jquery: &#123;</span><br><span class="line">          test: <span class="regexp">/jquery/</span>,</span><br><span class="line">          priority: <span class="number">10</span></span><br><span class="line">        &#125;,</span><br><span class="line">        base: &#123;</span><br><span class="line">          test: <span class="regexp">/base\.js/</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> CleanWebpackPlugin(),</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      title: <span class="string">''</span>, <span class="comment">// 页面标题 &lt;%=htmlWebpackPlugin.options.title%&gt;</span></span><br><span class="line">      template: <span class="string">''</span>, <span class="comment">// 对应的html模板</span></span><br><span class="line">      filename: <span class="string">''</span>, <span class="comment">// 生成的html的文件名</span></span><br><span class="line">      chunks: [] <span class="comment">// 对应的引入的js文件，可以写entry中的名字，还可以可以cacheGroups中的名字</span></span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-web多页面" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -477,61 +515,6 @@
 </article>
 
   
-    <article id="post-npm" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/npm/">npm</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/04/23/npm/" class="article-date">
-  <time datetime="2019-04-23T07:43:27.000Z" itemprop="datePublished">2019-04-23</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h1 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
-<p>初始化的目的就是为了生成package.json</p>
-<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块</p>
-<p>在安装时使用<code>npm install 模块名 --save</code>可以将模块名保存在dependencies</p>
-<p>使用<code>npm install 模块名 --save-dev</code>可以将模块名保存在devDependencies</p>
-<p>package.json中保留的是模块清单，不管在哪个位置，只要有package.json，我们都可以直接安装所有清单上的模块</p>
-<h2 id="安装（下载模块）"><a href="#安装（下载模块）" class="headerlink" title="安装（下载模块）"></a>安装（下载模块）</h2><p>npm install -g 模块名 // 全局安装</p>
-<p>npm install 模块名 –save</p>
-<p>npm install 模块名 –save-dev</p>
-<p>npm install // 直接根据package中所需要的模块进行自动安装</p>
-<h2 id="删除模块"><a href="#删除模块" class="headerlink" title="删除模块"></a>删除模块</h2><p>npm uninstall 模块名 –save<br>npm uninstall 模块名 –g</p>
-<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><blockquote>
-<p>facebook和一些大厂合作退出一个nodejs包管理工具，下载更快</p>
-</blockquote>
-<p>npm install -g yarn</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>yarn global add 模块名</p>
-<p>yarn add 模块名</p>
-<p>yarn add 模块名 –dev</p>
-<p>yarn</p>
-<h2 id="删除模块-1"><a href="#删除模块-1" class="headerlink" title="删除模块"></a>删除模块</h2><p>yarn remove 模块名</p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -583,6 +566,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/26/webpack配置/">webpack配置</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/25/web多页面/">webpack多页面配置</a>
           </li>
         
@@ -596,10 +583,6 @@
         
           <li>
             <a href="/2019/04/25/ES6标准模块/">ES6标准模块化</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/25/webpack基本环境搭建/">webpack基本环境搭建</a>
           </li>
         
       </ul>

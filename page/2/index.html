@@ -53,6 +53,61 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-npm" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/npm/">npm</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/23/npm/" class="article-date">
+  <time datetime="2019-04-23T07:43:27.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>npm init</p>
+<p>初始化的目的就是为了生成package.json</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>该文件中保存了当前项目的信息 dependencies devDependencies 一个是保存了需要的模块，另外是开发环境中需要的模块</p>
+<p>在安装时使用<code>npm install 模块名 --save</code>可以将模块名保存在dependencies</p>
+<p>使用<code>npm install 模块名 --save-dev</code>可以将模块名保存在devDependencies</p>
+<p>package.json中保留的是模块清单，不管在哪个位置，只要有package.json，我们都可以直接安装所有清单上的模块</p>
+<h2 id="安装（下载模块）"><a href="#安装（下载模块）" class="headerlink" title="安装（下载模块）"></a>安装（下载模块）</h2><p>npm install -g 模块名 // 全局安装</p>
+<p>npm install 模块名 –save</p>
+<p>npm install 模块名 –save-dev</p>
+<p>npm install // 直接根据package中所需要的模块进行自动安装</p>
+<h2 id="删除模块"><a href="#删除模块" class="headerlink" title="删除模块"></a>删除模块</h2><p>npm uninstall 模块名 –save<br>npm uninstall 模块名 –g</p>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><blockquote>
+<p>facebook和一些大厂合作退出一个nodejs包管理工具，下载更快</p>
+</blockquote>
+<p>npm install -g yarn</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>yarn global add 模块名</p>
+<p>yarn add 模块名</p>
+<p>yarn add 模块名 –dev</p>
+<p>yarn</p>
+<h2 id="删除模块-1"><a href="#删除模块-1" class="headerlink" title="删除模块"></a>删除模块</h2><p>yarn remove 模块名</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-模块类型" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -234,6 +289,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/26/webpack配置/">webpack配置</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/25/web多页面/">webpack多页面配置</a>
           </li>
         
@@ -247,10 +306,6 @@
         
           <li>
             <a href="/2019/04/25/ES6标准模块/">ES6标准模块化</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/25/webpack基本环境搭建/">webpack基本环境搭建</a>
           </li>
         
       </ul>
